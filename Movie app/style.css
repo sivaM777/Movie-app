@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.movie {
+    background-color: #1c1c1c;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.movie:hover {
+    transform: scale(1.05);
+}
+
+.movie img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.movie-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.movie-info h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.movie-info span {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.movie-info .green {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+.movie-info .orange {
+    background-color: #ffa000;
+    color: #fff;
+}
+
+.movie-info .red {
+    background-color: #f44336;
+    color: #fff;
+}
+
+.overview {
+    padding: 10px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    background-color: #292929;
+}
+
+.overview h3 {
+    margin-top: 0;
+    font-size: 1rem;
+}
+
+.overview button {
+    background-color: #e50914;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.overview button:hover {
+    background-color: #d40813;
+}
+
+/* Genre tags */
+#tags {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.tag {
+    background-color: #424242;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.tag.highlight {
+    background-color: #e50914;
+    color: #fff;
+}
+
+.tag:hover {
+    background-color: #616161;
+}
+
+/* Navigation */
+#myNav {
+    height: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.9);
+    overflow-y: hidden;
+    transition: 0.5s;
+}
+
+#myNav .overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+#myNav .overlay-content .embed {
+    display: none;
+}
+
+#myNav .overlay-content .embed.show {
+    display: block;
+}
+
+#myNav .overlay-content .dot {
+    height: 15px;
+    width: 15px;
+    margin: 5px 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+#myNav .overlay-content .dot.active {
+    background-color: #717171;
+}
+
+#myNav .overlay-content .dot:hover {
+    background-color: #ffffff;
+}
+
+#myNav .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    cursor: pointer;
+}
+
+#myNav .closebtn:hover {
+    color: #f1f1f1;
+}
+
+/* Arrows */
+#left-arrow, #right-arrow {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+#right-arrow {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+#left-arrow:hover, #right-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.pagination .disabled {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.pagination button {
+    background-color: #424242;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+.pagination button:hover {
+    background-color: #616161;
+}
+
+/* Search bar */
+#form {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+#search {
+    padding: 10px;
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid #424242;
+}
+
+#search:focus {
+    outline: none;
+    border-color: #e50914;
+}
+
+#form button {
+    background-color: #e50914;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#form button:hover {
+    background-color: #d40813;
+}
